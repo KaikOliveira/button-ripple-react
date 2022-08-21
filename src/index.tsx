@@ -30,6 +30,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   colorLoading?: string;
 }
 
+interface Coordinates {
+  x: number;
+  y: number;
+}
+
 const ButtonBase: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
@@ -48,7 +53,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
 ) => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
-  const [coords, setCoords] = React.useState({ x: -1, y: -1 });
+  const [coords, setCoords] = React.useState<Coordinates>({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
 
   const ref = refBtn || buttonRef;
