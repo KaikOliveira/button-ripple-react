@@ -75,14 +75,21 @@ const ButtonBase: React.ForwardRefRenderFunction<
     }
   }, [isRippling]);
 
+  function handleButtonClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    const rect = (event.target as HTMLElement).getBoundingClientRect();
+    setCoords({
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    });
+    onClick && onClick(event);
+  }
+
   return (
     <S.Container
       backgroundColor={backgroundColor}
-      onClick={(e: any) => {
-        const rect = e.target.getBoundingClientRect();
-        setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-        onClick && onClick(e);
-      }}
+      onClick={handleButtonClick}
       disabled={isLoading || rest.disabled}
       isLoading={isLoading}
       maxWidth={maxWidth}
