@@ -47,6 +47,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
     isLoading = false,
     maxWidth,
     height,
+    loadingMessage,
     ...rest
   }: ButtonProps,
   refBtn
@@ -92,7 +93,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
         />
       )}
       <S.LoadingComponent color={colorLoading} isShow={isLoading}>
-        <span>loading</span>
+        <span>{loadingMessage || 'loading'}</span>
       </S.LoadingComponent>
       <S.Content>{children}</S.Content>
     </S.Container>
