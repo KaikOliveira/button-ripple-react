@@ -63,11 +63,16 @@ const ButtonBase: React.ForwardRefRenderFunction<
     if (coords.x !== -1 && coords.y !== -1) {
       setIsRippling(true);
       setTimeout(() => setIsRippling(false), 300);
-    } else setIsRippling(false);
+      return;
+    }
+
+    setIsRippling(false);
   }, [coords]);
 
   React.useEffect(() => {
-    if (!isRippling) setCoords({ x: -1, y: -1 });
+    if (!isRippling) {
+      setCoords({ x: -1, y: -1 });
+    }
   }, [isRippling]);
 
   return (
