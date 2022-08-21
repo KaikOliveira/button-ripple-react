@@ -4,10 +4,29 @@ import * as S from "./styles";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  /**
+   * @param loadingMessage The message to be shown when component is loading. Default is 'loading'
+   */
+  loadingMessage?: string;
+  /**
+   * @param isLoading control the component loading state
+   */
   isLoading?: boolean;
+  /**
+   * @param maxWidth defines the maximum width of the component
+   */
   maxWidth?: string;
+  /**
+   * @param height defines the component height. Default is 100%
+   */
   height?: string;
+  /**
+   * @param backgroundColor defines the component backgroundColor. Default is '#08090A'
+   */
   backgroundColor?: string;
+  /**
+   * @param colorLoading defines the component colorLoading. Default is #fff
+   */
   colorLoading?: string;
 }
 
