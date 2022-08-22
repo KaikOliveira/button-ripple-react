@@ -1,13 +1,14 @@
 import * as React from "react";
 
 import * as S from "./styles";
+import { LoadingIcon } from "./svg/icons";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   /**
-   * @param loadingMessage The message to be shown when component is loading. Default is 'loading'
+   * @param loadingIcon custom loading icon.
    */
-  loadingMessage?: string;
+  loadingIcon?: React.ReactNode;
   /**
    * @param isLoading control the component loading state
    */
@@ -28,6 +29,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
    * @param colorLoading defines the component colorLoading. Default is #fff
    */
   colorLoading?: string;
+
+  /**
+   * @param disableLoadingRotation defines whether rotation animation is active on loading. The default is true
+   */
+  disableLoadingRotation?: boolean;
 }
 
 interface Coordinates {
@@ -47,7 +53,8 @@ const ButtonBase: React.ForwardRefRenderFunction<
     isLoading = false,
     maxWidth,
     height,
-    loadingMessage,
+    loadingIcon,
+    disableLoadingRotation = false,
     ...rest
   }: ButtonProps,
   refBtn
@@ -104,8 +111,12 @@ const ButtonBase: React.ForwardRefRenderFunction<
           top={coords.y}
         />
       )}
-      <S.LoadingComponent color={colorLoading} isShow={isLoading}>
-        <span>{loadingMessage || 'loading'}</span>
+      <S.LoadingComponent
+        disableLoadingRotation={disableLoadingRotation}
+        color={colorLoading}
+        isShow={isLoading}
+      >
+        {loadingIcon || <LoadingIcon />}
       </S.LoadingComponent>
       <S.Content>{children}</S.Content>
     </S.Container>
