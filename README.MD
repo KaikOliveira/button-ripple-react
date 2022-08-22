@@ -15,23 +15,21 @@
 ## How to use
 
 ```js
-    import { Button } from 'button-ripple-react'
+import { Button } from "button-ripple-react";
 
-    const App = () => {
-
-        return <Button>Teste</Button>
-    }
-
+const App = () => {
+  return <Button>Teste</Button>;
+};
 ```
 
 ## How use props
 
 ```js
-   children: React.ReactNode;
+  children: React.ReactNode;
   /**
-   * @param loadingMessage The message to be shown when component is loading. Default is 'loading'
+   * @param loadingIcon custom loading icon.
    */
-  loadingMessage?: string;
+  loadingIcon?: React.ReactNode;
   /**
    * @param isLoading control the component loading state
    */
@@ -52,4 +50,8 @@
    * @param colorLoading defines the component colorLoading. Default is #fff
    */
   colorLoading?: string;
+  /**
+   * @param disableLoadingRotation defines whether rotation animation is active on loading. The default is true
+   */
+  disableLoadingRotation?: boolean;
 ```
