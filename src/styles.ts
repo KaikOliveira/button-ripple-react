@@ -17,6 +17,7 @@ interface ButtonContainerProps {
 type LoadingComponentProps = {
   isShow: boolean;
   color: string;
+  disableLoadingRotation?: boolean;
 };
 
 export const Container = styled.button<ButtonContainerProps>`
@@ -99,16 +100,23 @@ export const Content = styled.span`
 `;
 
 export const LoadingComponent = styled.div<LoadingComponentProps>`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   ${({ isShow, color }) =>
     css`
-      color: ${color};
-      position: absolute;
-      inset: 0;
       visibility: ${isShow ? "visible" : "hidden"};
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      svg {
+        color: ${color};
+      }
+    `}
 
+  ${({ disableLoadingRotation }) =>
+    !disableLoadingRotation &&
+    css`
       svg {
         animation: loading 1.5s linear infinite;
       }
