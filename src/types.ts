@@ -12,9 +12,9 @@ export interface ButtonProps
    */
   isLoading?: boolean;
   /**
-   * @param maxWidth defines the maximum width of the component
+   * @param width defines the width of the component. Default is 100%
    */
-  maxWidth?: string;
+  width?: string;
   /**
    * @param height defines the component height. Default is 100%
    */
