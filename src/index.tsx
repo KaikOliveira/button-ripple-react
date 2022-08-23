@@ -2,44 +2,7 @@ import * as React from "react";
 
 import * as S from "./styles";
 import { LoadingIcon } from "./svg/icons";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  /**
-   * @param loadingIcon custom loading icon.
-   */
-  loadingIcon?: React.ReactNode;
-  /**
-   * @param isLoading control the component loading state
-   */
-  isLoading?: boolean;
-  /**
-   * @param maxWidth defines the maximum width of the component
-   */
-  maxWidth?: string;
-  /**
-   * @param height defines the component height. Default is 100%
-   */
-  height?: string;
-  /**
-   * @param backgroundColor defines the component backgroundColor. Default is '#08090A'
-   */
-  backgroundColor?: string;
-  /**
-   * @param colorLoading defines the component colorLoading. Default is #fff
-   */
-  colorLoading?: string;
-
-  /**
-   * @param disableLoadingRotation defines whether rotation animation is active on loading. The default is true
-   */
-  disableLoadingRotation?: boolean;
-}
-
-interface Coordinates {
-  x: number;
-  y: number;
-}
+import { ButtonProps, Coordinates } from "./types";
 
 const ButtonBase: React.ForwardRefRenderFunction<
   HTMLButtonElement,
