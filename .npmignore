@@ -1,0 +1,26 @@
+# Logs
+logs
+
+#idea files
+.idea
+
+# images
+*.jpg
+*.gif
+
+# babel files
+.babelrc
+
+# dependencies
+node_modules
+
+#examples
+examples
+demo
+
+#stories
+.storybook
+stories
+
+#tests
+coverage

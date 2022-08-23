@@ -9,6 +9,15 @@
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
+  "keywords": [
+    "react",
+    "react-component",
+    "front-end",
+    "CSS",
+    "ripple",
+    "web",
+    "components"
+  ],
   "dependencies": {
     "polished": "^4.2.2",
     "styled-components": "^5.3.1"
