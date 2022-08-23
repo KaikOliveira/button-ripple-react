@@ -14,7 +14,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
     backgroundColor = "#08090A",
     colorLoading = "#fff",
     isLoading = false,
-    maxWidth,
+    width,
     height,
     loadingIcon,
     disableLoadingRotation = false,
@@ -62,7 +62,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
       onClick={handleButtonClick}
       disabled={isLoading || rest.disabled}
       isLoading={isLoading}
-      maxWidth={maxWidth}
+      maxWidth={width}
       maxHeight={height}
       ref={ref}
       {...rest}
