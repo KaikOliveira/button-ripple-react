@@ -1,24 +1,11 @@
 import { lighten, shade } from "polished";
 import styled, { css } from "styled-components";
 
-interface RippleProps {
-  backgroundColor: string;
-  left: number;
-  top: number;
-}
-
-interface ButtonContainerProps {
-  isLoading: boolean;
-  backgroundColor: string;
-  maxWidth?: string;
-  maxHeight?: string;
-}
-
-type LoadingComponentProps = {
-  isShow: boolean;
-  color: string;
-  disableLoadingRotation?: boolean;
-};
+import {
+  ButtonContainerProps,
+  RippleProps,
+  LoadingComponentProps,
+} from "./types";
 
 export const Container = styled.button<ButtonContainerProps>`
   border-radius: 0.313rem;
