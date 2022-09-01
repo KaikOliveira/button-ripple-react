@@ -11,7 +11,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
   {
     children,
     onClick,
-    backgroundColor = "#08090A",
+    backgroundColor = "#087e8b",
     colorLoading = "#fff",
     isLoading = false,
     width,
@@ -81,7 +81,7 @@ const ButtonBase: React.ForwardRefRenderFunction<
       >
         {loadingIcon || <LoadingIcon />}
       </S.LoadingComponent>
-      <S.Content>{children}</S.Content>
+      <S.Content>{!isLoading && children}</S.Content>
     </S.Container>
   );
 };

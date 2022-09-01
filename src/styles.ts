@@ -79,7 +79,7 @@ export const Ripple = styled.span<RippleProps>`
   }
 `;
 
-export const Content = styled.span`
+export const Content = styled.div`
   position: relative;
   z-index: 2;
   font-size: 0.938rem;
